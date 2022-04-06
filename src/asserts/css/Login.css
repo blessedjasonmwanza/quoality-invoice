@@ -4,6 +4,7 @@
   min-height: 100vh;
   background: linear-gradient(190deg,#fbe5f7,#fff);
   transition: .2s;
+  overflow-x: hidden;
 }
 
 .login-card {
@@ -134,6 +135,22 @@
 
 .login-card .brand-content {
   width: 57%;
+  overflow: hidden;
+}
+.login-card .brand-content img {
+  display: block;
+  height: calc(100% - 300px);
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.login-card .brand-content p {
+  color: #bb0ce5;
+  font-style: var(--theme-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1155px) {
