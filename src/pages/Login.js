@@ -1,8 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import '../asserts/css/Login.css';
 import logo from '../asserts/img/logo.png';
 import googleLogo from '../asserts/img/google-logo.png'
-import { Link } from 'react-router-dom';
 
 export default function Login() {
   const attemptLogin = (e) => {
@@ -19,22 +19,22 @@ export default function Login() {
                     <img src={googleLogo} alt="Use google" title="Continue with google" />
                     <span> Continue with Google </span>
                 </button>
-                <span for='login-form' className='alt-action'> Or Login with Email</span>
+                <span  className='alt-action'> Or Login with Email</span>
                 <form className='login-form d-flex' id='login-form'  onSubmit={(e) => attemptLogin(e)}>
-                    <label for="email">
+                    <label htmlFor="email">
                       Email
-                      <input type="email" id="email" placeholder="Email" required />
+                      <input type="email" id="email" placeholder="Email" required autoComplete="username" />
                     </label>
                     
-                    <label for="password">
+                    <label htmlFor="password">
                       Password
-                      <input type="password" id="password" placeholder='Password' required />
+                      <input type="password" id="password" placeholder='Password' required autoComplete="current-password" />
                     </label>
                     
                     <div className='extra-cta d-flex'>
-                      <label for="remember" className='remember pointer'>
-                        <span for="remember">Remember me</span>
-                        <input type="checkbox" id="remember"/>
+                      <label htmlFor="remember" className='remember pointer'>
+                        <span>Remember me</span>
+                        <input type="checkbox" id="remember" />
                       </label>
                       <Link to="#">Forgot Password</Link>
                     </div>
@@ -42,7 +42,7 @@ export default function Login() {
                 </form>
             </section>
             <aside className="brand-content">
-              coming soon
+              
             </aside>
         </div>
     </div>
