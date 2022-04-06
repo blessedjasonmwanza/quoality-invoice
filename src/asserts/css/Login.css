@@ -8,7 +8,7 @@
 
 .login-card {
   display:flex;
-  border: 4px solid #ffffffee;
+  border: 4px solid rgba(255, 255, 255, 0.933);
   width: 80%;
   height: 500px;
   border-radius:8px;
@@ -36,11 +36,12 @@
 .login-card .login-section h1{
     font-size: 28px;
     margin-bottom:0;
-    padding-bottom:0 ;
 }
 .login-card .login-section p{
-    /* margin-top:5px; */
     font-size: 13px;
+    font-weight: 500;
+    color: #9e9d9d;
+    margin-left: 1px;;
 }
 .login-section .continue-google{
   display: flex;
@@ -55,7 +56,7 @@
   color: #828282;
   cursor:pointer;
   transition: 0.6s;
-  margin-top: 6px;
+  margin-top: 2px;
 }
 
 .login-section .continue-google:focus{
@@ -70,6 +71,98 @@
   height: 25px;
 }
 
+.alt-action{
+  margin: 25px 0 5px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #9e9d9d;
+  text-align: center;
+}
+
+.login-form {
+  flex-flow: column;
+  width: 100%;
+}
+
+.login-form label {
+  display:flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.login-form input:not([type="checkbox"]) {
+  height: 35px;
+  border: 1px solid #ded2d9;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 3px;
+  padding-left: 5px;
+  transition: .6s;
+  color: #828282;
+}
+
+.login-form input:not([type="checkbox"])::placeholder{
+  color: #e0e0e0;
+}
+
+.login-form input:not([type="checkbox"]):focus{
+  box-shadow: 0 0 0 3px #ded2d9;
+}
+
+.login-form .extra-cta{
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin: 10px  0 15px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login-form .extra-cta a{
+  text-decoration: none;
+  color: var(--theme-color);
+}
+
+.login-form label.remember {
+  flex-flow: row;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+}
+
+
 .login-card .brand-content {
   width: 57%;
+}
+
+@media screen and (max-width: 1155px) {
+  .login-card {
+    height: auto;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .login-card {
+    flex-direction: column;
+  }
+  .login-card .login-section {
+    width: calc(100% - 120px);
+  }
+  .login-card .brand-content {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-card{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+  .login-card .login-section {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
 }

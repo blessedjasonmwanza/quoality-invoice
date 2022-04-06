@@ -3,3 +3,26 @@
   align-content: center;
   justify-content: center;
 }
+
+.btn {
+  border: none;
+  color: #fff;
+  background-color: #b447d5;
+  padding: 10px;
+  border-radius: 05px;
+  box-shadow: 0 8px 15px rgb(180 71 213 / 60%);
+  outline: none;
+  transition: .6s;
+}
+
+.btn:focus{
+  box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.5);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
