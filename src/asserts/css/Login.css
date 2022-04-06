@@ -1,0 +1,75 @@
+.login-container {
+  display: flex;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(190deg,#fbe5f7,#fff);
+  transition: .2s;
+}
+
+.login-card {
+  display:flex;
+  border: 4px solid #ffffffee;
+  width: 80%;
+  height: 500px;
+  border-radius:8px;
+  background: linear-gradient(190deg,#fbe5f7,#fff);
+  flex-flow: row wrap;
+  flex-direction: row-reverse;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .25);
+  color: #828282;
+}
+
+.login-card .login-section {
+  display:flex;
+  flex-flow: column;
+  width: calc(43% - 120px);
+  padding: 0 60px;
+  height: 100%;
+  background: rgba(255, 255, 255, .85);
+}
+
+.login-section img{
+  width: 160px;
+  margin-top:20px;
+}
+
+.login-card .login-section h1{
+    font-size: 28px;
+    margin-bottom:0;
+    padding-bottom:0 ;
+}
+.login-card .login-section p{
+    /* margin-top:5px; */
+    font-size: 13px;
+}
+.login-section .continue-google{
+  display: flex;
+  width: 100%;
+  word-spacing: 5px;
+  padding: 5px 10px;
+  border: 2px solid #e8e8e8;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #828282;
+  cursor:pointer;
+  transition: 0.6s;
+  margin-top: 6px;
+}
+
+.login-section .continue-google:focus{
+  box-shadow: 0 0 0 3px rgba(232,232,232, .5);
+}
+
+.login-section .continue-google img{
+  display:inline-block;
+  margin: 0;
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.login-card .brand-content {
+  width: 57%;
+}
