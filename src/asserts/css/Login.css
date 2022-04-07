@@ -132,6 +132,10 @@
   gap: 10px;
 }
 
+.login-section  .btn {
+  font-weight: 600;
+  letter-spacing: 0.0051em;
+}
 
 .login-card .brand-content {
   width: 57%;

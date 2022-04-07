@@ -16,7 +16,7 @@ export default function Login() {
           <img src={logo} alt="Quoality Logo" />
           <h1>Invoice</h1>
           <p>Login to enjoy automating your business</p>
-          <button className="continue-google vh-center">
+          <button className="continue-google vh-center"  type='button'>
             <img src={googleLogo} alt="Use google" title="Continue with google" />
             <span> Continue with Google </span>
           </button>
