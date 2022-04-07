@@ -1,0 +1,73 @@
+.signup-card {
+  width: 85%;
+  height: 600px;
+}
+
+.signup-card .signup-section {
+  width: calc(50% - 120px);
+}
+
+.signup-section .signup-names{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.signup-section .signup-names label{
+  min-width: 45%;
+}
+
+.signup-section .continue-google {
+  margin-top: 10px;
+}
+
+.alt-action {
+  margin: 25px 0 5px 0;
+}
+
+.signup-card .brand-content {
+  width: 50%;
+}
+
+
+@media screen and (max-width: 1155px) {
+  .signup-card {
+    height: auto;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .signup-section .signup-names label{
+    width: 45% !important;
+    /* border: 1px solid red; */
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .signup-card {
+    flex-direction: column;
+  }
+
+  .signup-card .signup-section {
+    width: calc(100% - 120px);
+  }
+
+  .signup-card .brand-content {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signup-card {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .signup-card .signup-section {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
+}
