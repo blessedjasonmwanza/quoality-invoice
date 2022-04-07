@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import '../asserts/css/Login.css';
-import logo from '../asserts/img/logo.png';
-import googleLogo from '../asserts/img/google-logo.png';
-import hero from '../asserts/img/hero.png';
+import '../assets/css/Login.css';
+import logo from '../assets/img/logo.png';
+import googleLogo from '../assets/img/google-logo.png';
+import hero from '../assets/img/hero.png';
 
 export default function Login() {
   const attemptLogin = (e) => {
