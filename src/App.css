@@ -33,3 +33,28 @@ img{
 .d-flex {
   display: flex;
 }
+
+.top-nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.left-nav {
+  display: flex;
+  position: fixed;
+  top: var(--top-nav-height);
+  left: 0;
+  flex-direction: column;
+}
+
+main {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  border: 1px solid grey;
+  top: var(--top-nav-height);
+  left: var(--left-nav-width);
+}
