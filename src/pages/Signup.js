@@ -7,7 +7,7 @@ import googleLogo from '../asserts/img/google-logo.png';
 import hero from '../asserts/img/hero.png';
 
 export default function Signup() {
-  const attemptLogin = (e) => {
+  const attemptSignup = (e) => {
     e.preventDefault();
   }
   return (
@@ -17,7 +17,7 @@ export default function Signup() {
           <img src={logo} alt="Quoality Logo" />
           <h1>Invoice</h1>
           <p>Signup to enjoy automating your business</p>
-          <form className='login-form d-flex' id='login-form' onSubmit={(e) => attemptLogin(e)}>
+          <form className='login-form signup-form d-flex' id='login-form' onSubmit={(e) => attemptSignup(e)}>
             <div className='signup-names'>
               <label htmlFor='first-name'>
                 First name

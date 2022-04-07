@@ -41,7 +41,12 @@
 @media screen and (max-width: 1024px) {
   .signup-section .signup-names label{
     width: 45% !important;
-    /* border: 1px solid red; */
+  }
+}
+
+@media screen and (max-width:1160px) and (min-width:1000px) {
+  .signup-section .signup-names label{
+    width: 43% !important;
   }
 }
 
