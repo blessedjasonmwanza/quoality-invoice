@@ -38,8 +38,12 @@ export default function Signup() {
               <input type="password" id="password" placeholder='Password' required autoComplete="current-password" />
             </label>
             <div className='extra-cta d-flex'>
-              <span>Already have an account </span>
-              <Link to="/login">Login</Link>
+              <span />
+              <span>
+                Already have an account? &nbsp; 
+                <Link to="/login">Login now</Link>
+              </span>
+              
             </div>
             <button className="btn login-btn pointer">Create account</button>
             <span className='alt-action'> Or </span>

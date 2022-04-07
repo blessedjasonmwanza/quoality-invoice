@@ -1,4 +1,11 @@
-.vh-center{
+img{
+  -webkit-user-drag: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.vh-center {
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -15,7 +22,7 @@
   transition: .6s;
 }
 
-.btn:focus{
+.btn:focus {
   box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.5);
 }
 
