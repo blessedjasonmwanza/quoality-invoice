@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import '../assets/css/NewInvoice.css';
+import '../assets/css/Table.css';
 
 export default function New() {
   const [invoice, setInvoice] = useState({
+    company_name: 'Company A',
     notes: '',
     currency: 'USD',
+    paid: false,
     subtotal: 0.00,
     total_tax: 0.00,
     total_excl_tax: 0.00,
@@ -94,10 +97,11 @@ export default function New() {
       alert('Please add at least one item to the invoice.');
     }
     
-  }
+  };
+
   return (
     <>
-      <span className='display-title'>Create updatedInvoice</span>
+      <span className='display-title'>Create Invoice</span>
       <div className='card-hovered'>
         <form className='new-item-form' onSubmit={(e) => addItem(e)}>
           <label>
