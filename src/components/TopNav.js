@@ -6,7 +6,7 @@ export default function TopNav() {
   return (
     <header className='top-nav'>
         <img src={logo} alt="logo" className='logo' />
-        <NavLink to='/logout' className="no-drag">Logout</NavLink>
+        <NavLink to='/login' className="no-drag">Logout</NavLink>
     </header>
   )
 }

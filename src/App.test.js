@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import LeftNav from '../components/LeftNav';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  render(<LeftNav />);
+  const linkElement = screen.getByText(/Invoice/i);
   expect(linkElement).toBeInTheDocument();
 });
