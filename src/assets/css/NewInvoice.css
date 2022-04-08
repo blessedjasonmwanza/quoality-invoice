@@ -1,13 +1,38 @@
+.new-item-form {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.new-item-form label{
+    display: inline-flex;
+    flex-direction: column;
+    color: #757575;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.new-item-form label input,
+.new-item-form label textarea {
+    font-weight: 500;
+    transition: 0.6s;
+    border-radius: 5px;
+}
+.new-item-form label input:focus, .new-item-form label textarea:focus {
+    box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.2);
+}
+
 .new-invoice-table {
     width:100%;
     margin:0 auto;
     clear:both;
     border-collapse:separate;
-    border-spacing:0;   
-    border-bottom: 1px solid rgb(204, 204, 204);
+    border-spacing:0;
     color: rgb(102, 102, 102);
     font-size: 13px;
     line-height: 18.2px;
+    border-top: 3px solid rgb(204, 204, 204);
+    margin-top: 10px;
 }
 .new-invoice-table thead tr th {
     border-bottom: 3px solid rgb(204, 204, 204);
@@ -30,4 +55,27 @@
 }
 .new-invoice-table tbody tr:hover{
     background-color: #dddcdc;
+}
+
+input, select {
+    line-height: 25px;
+    margin: 5px;
+    max-height: 26px;
+    padding-left: 4px;
+    min-width: 150px !important;
+    max-width: 150px;
+    margin-left: 0px;
+}
+
+input, select, textarea {
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 2px;
+    color: #666;
+}
+textarea {
+    margin-top: 5px;
+    margin-bottom: -10px;
+    height: 20px;
+    padding-top: 5px;
 }
