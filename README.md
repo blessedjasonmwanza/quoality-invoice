@@ -13,7 +13,7 @@
 ## Deployed On
 
 #### GitHub Pages 
-### [Live Preview Coming soon]()
+### [See Live Preview](https://blessedjasonmwanza.github.io/quoality-invoice/)
 
 ## Getting Started
 
