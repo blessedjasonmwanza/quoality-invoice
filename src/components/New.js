@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import '../assets/css/NewInvoice.css';
 
 export default function New() {
-  const [invoices, setInvoices] = useState([]);
-  const [invoice, setInvoice] = useState({
+  const [invoice, setInvoice] = useState({})
+  const [invoiceItems, setInvoiceItems] = useState([]);
+  const [item, setInvoiceItem] = useState({
     name: '',
     description: '',
     quantity: 1,
@@ -12,13 +13,20 @@ export default function New() {
     discount: 0.00,
     total: 0,
   });
+
   const addItem = (e) => {
     e.preventDefault();
-    const {unit_price, quantity, unit_tax_rate} = invoice;
+    const {unit_price, quantity, unit_tax_rate} = item;
     const total = (unit_price * quantity) - ((unit_tax_rate /100) * (unit_price * quantity));
-    const newItem = {...invoice,total: total};
-    setInvoices([...invoices, newItem]);
+    const newItem = {...item,total: total};
+    setInvoiceItems([...invoiceItems, newItem]);
     e.target.reset();
+    localStorage.setItem('invoiceItems', JSON.stringify(invoiceItems));
+  }
+  const removeItem = (index) => {
+    const newItems = invoiceItems.filter((item, i) => i !== index);
+    setInvoiceItems(newItems);
+    localStorage.setItem('invoiceItems', JSON.stringify(newItems));
   }
   return (
     <>
@@ -27,27 +35,27 @@ export default function New() {
         <form className='new-item-form' onSubmit={(e) => addItem(e)}>
           <label>
             Product name:
-            <input type='text' onInput={(e) => setInvoice({...invoice, name:e.target.value})} placeholder='Enter Product name' required />
+            <input type='text' onInput={(e) => setInvoiceItem({...item, name:e.target.value})} placeholder='Enter Product name' required />
           </label>
           <label>
             Description
-            <textarea placeholder='Type Description' onInput={(e) => setInvoice({...invoice, description:e.target.value})}></textarea>
+            <textarea placeholder='Type Description' onInput={(e) => setInvoiceItem({...item, description:e.target.value})}></textarea>
           </label>
           <label>
             Quantity
-            <input type='number' placeholder='Total items' step="1" required onInput={(e) => setInvoice({...invoice, quantity:e.target.value})} />
+            <input type='number' placeholder='Total items' step="1" required onInput={(e) => setInvoiceItem({...item, quantity:e.target.value})} />
           </label>
           <label>
             unit price
-            <input type='number' placeholder='cost per item' step="0.01" required onInput={(e) => setInvoice({...invoice, unit_price:e.target.value})} />
+            <input type='number' placeholder='cost per item' step="0.01" required onInput={(e) => setInvoiceItem({...item, unit_price:e.target.value})} />
           </label>
           <label>
             Unit tax rate
-            <input type='number' placeholder='Tax % per item' max="100" onInput={(e) => setInvoice({...invoice, unit_tax_rate:e.target.value})} />
+            <input type='number' placeholder='Tax % per item' max="100" onInput={(e) => setInvoiceItem({...item, unit_tax_rate:e.target.value})} />
           </label>
           <label>
             Discount amount
-            <input type='number' placeholder='cost per item' step="0.01" onInput={(e) => setInvoice({...invoice, discount:e.target.value})} />
+            <input type='number' placeholder='cost per item' step="0.01" onInput={(e) => setInvoiceItem({...item, discount:e.target.value})} />
           </label>
           <label>
             <br />
@@ -69,7 +77,7 @@ export default function New() {
           </thead>
           <tbody>
             {
-              invoices.map((invoice, i) => 
+              invoiceItems.map((invoice, i) => 
                 (<tr key={i}>
                   <td>{invoice.name}</td>
                   <td>{invoice.description}</td>
@@ -79,7 +87,7 @@ export default function New() {
                   <td>{invoice.discount}</td>
                   <td>{(invoice.total).toFixed(2)}</td>
                   <td>
-                    <button className='btn'>Delete</button>
+                    <button className='btn' onClick={() => removeItem(i)}>Remove</button>
                   </td>
                 </tr>)
               )
