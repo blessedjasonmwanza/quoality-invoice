@@ -1,4 +1,4 @@
-![](./src/asserts/img/logo.png)
+![](./src/assets/img/logo.png)
 
 
 # Invoicing

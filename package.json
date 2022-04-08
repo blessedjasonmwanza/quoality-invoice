@@ -2,6 +2,7 @@
   "name": "quoality-invoice",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://blessedjasonmwanza.github.io/quoality-invoice",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.2.7",
@@ -25,6 +26,8 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

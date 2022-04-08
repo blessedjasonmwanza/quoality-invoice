@@ -1,0 +1,95 @@
+.new-item-form {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.new-item-form label{
+    display: inline-flex;
+    flex-direction: column;
+    color: #757575;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.new-item-form label input,
+.new-item-form label textarea {
+    font-weight: 500;
+    transition: 0.6s;
+    border-radius: 5px;
+}
+.new-item-form label input:focus, .new-item-form label textarea:focus {
+    box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.2);
+}
+
+.invoice-card input, select {
+    line-height: 25px;
+    margin: 5px;
+    max-height: 26px;
+    padding-left: 4px;
+    min-width: 150px !important;
+    max-width: 150px;
+    margin-left: 0px;
+}
+
+.invoice-card input, select, textarea {
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 2px;
+    color: #666;
+}
+.invoice-card textarea {
+    margin-top: 5px;
+    margin-bottom: -10px;
+    height: 20px;
+    padding-top: 5px;
+}
+
+.invoice-summery {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-top: 15px;
+}
+.invoice-summery .notes {
+    display:inline-flex;
+    flex-direction: column;
+    min-width: 50%;
+}
+.invoice-summery .notes textarea{
+    min-height: 50px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.invoice-summery .notes textarea:focus{
+    box-shadow: 0 0 0 2px rgba(180, 71, 213, 0.2);
+}
+.invoice-summery .stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10px;
+    gap: 5px;
+}
+.invoice-summery .stats > span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1PX solid #ccc;
+    padding: 5px 0px;
+    gap: 10px;
+    font-size: 13px;
+}
+.invoice-summery .stats > span b{
+    font-weight: 700;
+    color: rgb(143, 17, 182);
+}
+
+.save-invoice {
+    display:flex;
+    margin: 0 auto;
+    align-self: center;
+    margin-top: 20px;
+}
