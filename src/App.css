@@ -36,6 +36,19 @@ a {
   box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.5);
 }
 
+.danger-btn {
+  background-color: rgb(255, 82, 82);
+}
+
+.danger-btn:hover {
+  background-color: #e42a2a;
+  box-shadow: 0 0 0 2px rgba(255, 82, 82, 0.479);
+}
+
+.danger-btn:focus{
+  box-shadow: 0 0 0 3px rgba(255, 82, 82, 0.5);
+}
+
 .pointer {
   cursor: pointer;
 }
