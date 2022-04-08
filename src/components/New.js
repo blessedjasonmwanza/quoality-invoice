@@ -1,40 +1,70 @@
-import React, { useState } from 'react'
+import React, { useState,  useEffect } from 'react'
 import '../assets/css/NewInvoice.css';
 
 export default function New() {
-  const [invoice, setInvoice] = useState({})
+  const [invoice, setInvoice] = useState({
+    notes: '',
+    subtotal: 0.00,
+    tax: 0.00,
+    total_excl_tax: 0.00,
+    total_discount: 0.00,
+    invoice_items: [],
+  });
+
+  useEffect(() => {
+      const savedInvoice = JSON.parse(localStorage.getItem('draftInvoice'));
+      if (savedInvoice) {
+        setInvoice(() => savedInvoice)
+        setInvoiceItems(savedInvoice.invoice_items)
+      }
+  },[]);
   const [invoiceItems, setInvoiceItems] = useState([]);
+ 
   const [item, setInvoiceItem] = useState({
     name: '',
     description: '',
     quantity: 1,
     unit_price: 0.00,
     unit_tax_rate: 0.00,
+    unit_tax_amount: 0.00,
     discount: 0.00,
     total: 0,
   });
 
   const addItem = (e) => {
     e.preventDefault();
-    const {unit_price, quantity, unit_tax_rate} = item;
-    const total = (unit_price * quantity) - ((unit_tax_rate /100) * (unit_price * quantity));
-    const newItem = {...item,total: total};
-    setInvoiceItems([...invoiceItems, newItem]);
+    const { unit_price, quantity, unit_tax_rate, discount } = item;
+    const total = ((unit_price * quantity) + ((unit_tax_rate /100) * (unit_price * quantity))) - discount;
+    const tax_total = (unit_tax_rate /100) * (unit_price * quantity);
+    const items = [...invoiceItems, {...item,total: total,unit_tax_amount: tax_total}];
+    setInvoiceItems(() => (items));
+    const updatedInvoice = {...invoice, invoice_items: items};
+    setInvoice(updatedInvoice);
+    localStorage.setItem('draftInvoice', JSON.stringify(updatedInvoice));
     e.target.reset();
-    localStorage.setItem('invoiceItems', JSON.stringify(invoiceItems));
-  }
+  };
+
   const removeItem = (index) => {
     const newItems = invoiceItems.filter((item, i) => i !== index);
     setInvoiceItems(newItems);
-    localStorage.setItem('invoiceItems', JSON.stringify(newItems));
-  }
+    const updatedInvoice = {...invoice, invoice_items: newItems};
+    setInvoice(() => (updatedInvoice));
+    localStorage.setItem('draftInvoice', JSON.stringify(updatedInvoice));
+  };
+
+  const updateNote = (note) => {
+    const updatedInvoice = {...invoice, notes: note};
+    setInvoice(() => (updatedInvoice));
+    localStorage.setItem('draftInvoice', JSON.stringify(updatedInvoice));
+  };
+  
   return (
     <>
-      <span className='display-title'>Create Invoice</span>
+      <span className='display-title'>Create updatedInvoice</span>
       <div className='card-hovered'>
         <form className='new-item-form' onSubmit={(e) => addItem(e)}>
           <label>
-            Product name:
+            Product name *
             <input type='text' onInput={(e) => setInvoiceItem({...item, name:e.target.value})} placeholder='Enter Product name' required />
           </label>
           <label>
@@ -42,20 +72,20 @@ export default function New() {
             <textarea placeholder='Type Description' onInput={(e) => setInvoiceItem({...item, description:e.target.value})}></textarea>
           </label>
           <label>
-            Quantity
+            Quantity *
             <input type='number' placeholder='Total items' step="1" required onInput={(e) => setInvoiceItem({...item, quantity:e.target.value})} />
           </label>
           <label>
-            unit price
-            <input type='number' placeholder='cost per item' step="0.01" required onInput={(e) => setInvoiceItem({...item, unit_price:e.target.value})} />
+            unit price *
+            <input type='number' placeholder='cost per item'  pattern="^\d*(\.\d{0,2})?$"  step=".01" required onInput={(e) => setInvoiceItem({...item, unit_price:e.target.value})} />
           </label>
           <label>
             Unit tax rate
-            <input type='number' placeholder='Tax % per item' max="100" onInput={(e) => setInvoiceItem({...item, unit_tax_rate:e.target.value})} />
+            <input type='text' placeholder='Tax % per item' max="100" pattern="^\d*(\.\d{0,2})?$"  step=".01" onInput={(e) => setInvoiceItem({...item, unit_tax_rate:e.target.value})} />
           </label>
           <label>
             Discount amount
-            <input type='number' placeholder='cost per item' step="0.01" onInput={(e) => setInvoiceItem({...item, discount:e.target.value})} />
+            <input type='number' placeholder='Discount amount'  pattern="^\d*(\.\d{0,2})?$"  step=".01" onInput={(e) => setInvoiceItem({...item, discount:e.target.value})} />
           </label>
           <label>
             <br />
@@ -85,8 +115,8 @@ export default function New() {
                   <td>{invoice.unit_price}</td>
                   <td>{invoice.unit_tax_rate}</td>
                   <td>{invoice.discount}</td>
-                  <td>{(invoice.total).toFixed(2)}</td>
-                  <td>
+                  <td>{invoice.total.toFixed(2)}</td>
+                  <td className='actions'>
                     <button className='btn' onClick={() => removeItem(i)}>Remove</button>
                   </td>
                 </tr>)
@@ -94,6 +124,26 @@ export default function New() {
             }
           </tbody>
         </table>
+        <div className='invoice-summery'>
+            <label className='notes'>
+              Special Notes
+              <textarea value={invoice.notes} onInput={(e => updateNote(e.target.value))} placeholder='Add Notes, or terms and conditions here'></textarea>
+            </label>
+          <span className='stats'>
+            <span>
+              <b>Subtotal:</b> 
+              <span>${(invoiceItems.reduce((acc, item) => acc + item.total, 0)).toFixed(2)}</span>
+            </span>
+            <span>
+              <b>Tax:</b>
+              <span>${(invoiceItems.reduce((acc, item) => acc + item.unit_tax_amount, 0)).toFixed(2)}</span>
+            </span>
+            <span>
+              <b>Total Excluding TAX:</b> 
+              <span>${(invoiceItems.reduce((acc, item) => acc + (item.total - item.unit_tax_amount), 0).toFixed(2))}</span>
+            </span>
+          </span>
+        </div>
       </div>
     </>
   )
