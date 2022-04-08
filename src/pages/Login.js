@@ -8,6 +8,7 @@ import hero from '../assets/img/hero.png';
 export default function Login() {
   const attemptLogin = (e) => {
     e.preventDefault();
+    window.location.href = '/dashboard';
   }
   return (
     <div className="login-container vh-center">

@@ -15,7 +15,7 @@ export default function Dashboard() {
       <LeftNav />
       <main>
         <Routes>
-          <Route path="/"  element={<New />} />
+          <Route path="/dashboard"  element={<New />} />
           <Route path="/new"  element={<New />} />
           <Route path="/paid"  element={<Paid />} />
           <Route path="/overdue"  element={<Overdue />} />

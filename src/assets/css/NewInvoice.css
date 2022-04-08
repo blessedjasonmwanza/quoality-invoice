@@ -22,7 +22,7 @@
     box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.2);
 }
 
-input, select {
+.invoice-card input, select {
     line-height: 25px;
     margin: 5px;
     max-height: 26px;
@@ -32,13 +32,13 @@ input, select {
     margin-left: 0px;
 }
 
-input, select, textarea {
+.invoice-card input, select, textarea {
     border: 1px solid #ccc;
     outline: none;
     border-radius: 2px;
     color: #666;
 }
-textarea {
+.invoice-card textarea {
     margin-top: 5px;
     margin-bottom: -10px;
     height: 20px;

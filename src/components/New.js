@@ -102,7 +102,7 @@ export default function New() {
   return (
     <>
       <span className='display-title'>Create Invoice</span>
-      <div className='card-hovered'>
+      <div className='card-hovered invoice-card'>
         <form className='new-item-form' onSubmit={(e) => addItem(e)}>
           <label>
             Product name *
