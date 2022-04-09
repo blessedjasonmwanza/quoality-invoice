@@ -15,6 +15,12 @@
 #### GitHub Pages 
 ### [See Live Preview](https://blessedjasonmwanza.github.io/quoality-invoice/)
 
+![mobile (10)](https://user-images.githubusercontent.com/35315311/162566728-02e26769-adf8-42c5-84a4-0bfb39e01779.png)
+![mobile (9)](https://user-images.githubusercontent.com/35315311/162566730-07582d55-2aaa-4c72-b077-dfea8fffbee1.png)
+![mobile (7)](https://user-images.githubusercontent.com/35315311/162566736-88557a68-74eb-495c-bf85-f80f4e864932.png)
+![mobile (6)](https://user-images.githubusercontent.com/35315311/162566737-f86d04cf-05ad-4ca7-9676-d07c7eaa5942.png)
+
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
