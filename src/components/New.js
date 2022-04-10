@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import {addInvoice} from '../redux/store/invoices';
 import '../assets/css/NewInvoice.css';
 import '../assets/css/Table.css';
 
 export default function New() {
+  const dispatch = useDispatch();
   const [invoice, setInvoice] = useState({
     company_name: 'Company A',
     notes: '',
     currency: 'USD',
-    paid: false,
+    status: 'unpaid',
     subtotal: 0.00,
     total_tax: 0.00,
     total_excl_tax: 0.00,
     total_discount: 0.00,
     invoice_items: [],
   });
-
   const [invoiceItems, setInvoiceItems] = useState([]);
   const [item, setInvoiceItem] = useState({
     name: '',
@@ -86,9 +88,15 @@ export default function New() {
 
   const saveInvoice = () => {
     if(invoice.invoice_items.length > 0) {
-      const savedInvoices = JSON.parse(localStorage.getItem('savedInvoices')) || [];
-      const newInvoices = [...savedInvoices, invoice];
-      localStorage.setItem('savedInvoices', JSON.stringify(newInvoices));
+      const updatedInvoice = {
+        ...invoice,
+        total_excl_tax: total_excl_tax(),
+        subtotal: subtotal(),
+        total_tax: total_tax(),
+        total_discount: total_discount(),
+      };
+      setInvoice(() => (updatedInvoice));
+      dispatch(addInvoice(updatedInvoice));
       setInvoiceItems([]);
       setInvoice({ notes: '', currency: 'USD', subtotal: 0.00, total_tax: 0.00, total_excl_tax: 0.00, total_discount: 0.00, invoice_items: [] });
       localStorage.removeItem('draftInvoice');
