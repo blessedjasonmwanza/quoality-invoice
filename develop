@@ -1,0 +1,13 @@
+Removing src/components/orders/SaveInvoices.js
+Removing src/components/orders/FetchInvoices.js
+Merge made by the 'recursive' strategy.
+ src/App.css                            | 70 ++++++++++++++++++++++++++++++++++
+ src/assets/css/NewInvoice.css          | 26 +++++++++----
+ src/components/DisplayInvoices.js      | 44 +++++++++++++++------
+ src/components/New.js                  |  2 +-
+ src/components/orders/FetchInvoices.js |  8 ----
+ src/components/orders/SaveInvoices.js  |  2 -
+ src/redux/store/invoices.js            |  2 +-
+ 7 files changed, 124 insertions(+), 30 deletions(-)
+ delete mode 100644 src/components/orders/FetchInvoices.js
+ delete mode 100644 src/components/orders/SaveInvoices.js
