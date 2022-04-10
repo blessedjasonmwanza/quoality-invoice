@@ -1,24 +1,46 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { searchResults } from '../redux/store/invoices';
 import '../assets/css/Table.css';
+import FetchInvoices from './invoices/FetchInvoices';
 
 export default function DisplayInvoices({page, status}) {
   const invoices = useSelector(state => state.invoices.invoices);
-  console.log(invoices);
-  const [invoicesToDisplay, setInvoicesToDisplay] = useState([]);
+  const dispatch = useDispatch();
   useEffect(() => {
-    if(status.toLowerCase() === 'all') {
-      setInvoicesToDisplay(invoices)
-    }else{
-      const invoicesList = invoices.filter(invoice => invoice.status === status);
-      setInvoicesToDisplay(invoicesList)
-    }
-  },[]);
+    const results = dispatch(FetchInvoices());
+    const invoiceList = results.payload.filter(invoice => invoice.status === status);
+      dispatch(searchResults(invoiceList));
+  } , []);
   const editInvoice = (invoice) => alert(`Edit ${invoice.company_name} invoice coming soon!`);
+  const searchInvoices = (e) => {
+    const search = e.target.value;
+    const savedInvoices = JSON.parse(localStorage.getItem('invoices')) || [];
+    if (search === '') {
+      dispatch(searchResults(savedInvoices));
+    } else {
+      const filteredInvoices = savedInvoices.filter(invoice =>
+        (
+          invoice.company_name.toLowerCase().includes(search.toLowerCase()) ||
+          invoice.notes.toLowerCase().includes(search.toLowerCase()) ||
+          invoice.status.toLowerCase().includes(search.toLowerCase())
+          
+        )
+      );
+      dispatch(searchResults(filteredInvoices));
+    }
+  }
   return (
     <>
       <span className='display-title'>{page}</span>
       <div className='card-hovered'>
+        <div className='invoice-search-bar d-flex'>
+          <span />
+          <label>
+            <small>Find Invoices</small>
+            <input type='search' placeholder='Search' onInput={(e) => searchInvoices(e)} />
+          </label>
+        </div>
         <table id="table" className='dt-table'>
           <thead>
             <tr>
@@ -32,7 +54,7 @@ export default function DisplayInvoices({page, status}) {
           </thead>
           <tbody>
             {
-              invoicesToDisplay.map((invoice, i) => (
+              invoices.map((invoice, i) => (
                 <tr key={i}>
                   <td>{invoice.company_name}</td>
                   <td>{invoice.invoice_items.map((item) => item.name).join(', ')}</td>
