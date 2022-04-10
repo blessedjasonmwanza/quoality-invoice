@@ -1,7 +1,8 @@
 import React from 'react'
+import DisplayInvoices from './DisplayInvoices'
 
 export default function Paid() {
   return (
-    <span className='display-title'>Paid Invoices</span>
+    <DisplayInvoices page='Paid Invoices' status='paid' />
   )
 }

@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {addInvoice} from '../redux/store/invoices';
 import '../assets/css/NewInvoice.css';
 import '../assets/css/Table.css';
 
 export default function New() {
   const dispatch = useDispatch();
-  const invoices = useSelector((state) => state.invoices.invoices);
-
   const [invoice, setInvoice] = useState({
     company_name: 'Company A',
     notes: '',
     currency: 'USD',
-    paid: false,
+    status: 'unpaid',
     subtotal: 0.00,
     total_tax: 0.00,
     total_excl_tax: 0.00,
@@ -89,7 +88,15 @@ export default function New() {
 
   const saveInvoice = () => {
     if(invoice.invoice_items.length > 0) {
-      useDispatch(addInvoice(invoice));
+      const updatedInvoice = {
+        ...invoice,
+        total_excl_tax: total_excl_tax(),
+        subtotal: subtotal(),
+        total_tax: total_tax(),
+        total_discount: total_discount(),
+      };
+      setInvoice(() => (updatedInvoice));
+      dispatch(addInvoice(updatedInvoice));
       setInvoiceItems([]);
       setInvoice({ notes: '', currency: 'USD', subtotal: 0.00, total_tax: 0.00, total_excl_tax: 0.00, total_discount: 0.00, invoice_items: [] });
       localStorage.removeItem('draftInvoice');

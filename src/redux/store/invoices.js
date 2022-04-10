@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
-import saveinvoices from '../../components/invoices/Saveinvoices';
+import saveInvoices from '../../components/orders/SaveInvoices';
 // slice
 const invoicesSlice = createSlice({
   name: 'invoices',
@@ -13,8 +13,9 @@ const invoicesSlice = createSlice({
       saveInvoices(action.payload);
     },
     addInvoice: (state, action) => {
-      state.invoices.push(action.payload);
-      saveInvoices(state.invoices);
+      const newInvoices = [...state.invoices, action.payload];
+      saveInvoices(newInvoices);
+      state.invoices = newInvoices;
     },
     searchResults: (state, action) => {
       state.invoices = action.payload;
@@ -32,5 +33,5 @@ export default invoicesSlice.reducer;
 
 // Actions
 export const {
-  invoicesSuccess, searchResults, archiveOrder,updateInvoiceStatus, addInvoice
+  invoicesSuccess, searchResults, updateInvoiceStatus, addInvoice,
 } = invoicesSlice.actions;

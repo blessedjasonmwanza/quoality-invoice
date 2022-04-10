@@ -1,7 +1,8 @@
 import React from 'react'
+import DisplayInvoices from './DisplayInvoices'
 
 export default function Overdue() {
   return (
-    <span className='display-title'>Overdue Invoices</span>
+    <DisplayInvoices page='Overdue Invoices' status='overdue' />
   )
 }
