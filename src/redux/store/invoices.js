@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
-import saveInvoices from '../../components/orders/SaveInvoices';
+import saveInvoices from '../../components/invoices/SaveInvoices';
 // slice
 const invoicesSlice = createSlice({
   name: 'invoices',

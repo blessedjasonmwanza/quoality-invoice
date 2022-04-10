@@ -1,9 +1,14 @@
-.new-item-form {
+.new-item-form{
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
 }
-.new-item-form label{
+.invoice-search-bar{
+    
+    justify-content: space-between;
+}
+.new-item-form label,
+.invoice-search-bar label{
     display: inline-flex;
     flex-direction: column;
     color: #757575;
@@ -13,16 +18,22 @@
 }
 
 .new-item-form label input,
-.new-item-form label textarea {
+.invoice-search-bar label input,
+.new-item-form label textarea
+.invoice-search-bar, label textarea{
     font-weight: 500;
     transition: 0.6s;
     border-radius: 5px;
 }
-.new-item-form label input:focus, .new-item-form label textarea:focus {
+.new-item-form label input:focus, 
+.invoice-search-bar label input:focus,
+.new-item-form label textarea:focus {
     box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.2);
 }
 
-.invoice-card input, select {
+.invoice-card input, 
+.invoice-search-bar input,
+select{
     line-height: 25px;
     margin: 5px;
     max-height: 26px;
@@ -32,10 +43,11 @@
     margin-left: 0px;
 }
 
-.invoice-card input, select, textarea {
+.invoice-card input,
+.invoice-search-bar input,
+select, textarea {
     border: 1px solid #ccc;
     outline: none;
-    border-radius: 2px;
     color: #666;
 }
 .invoice-card textarea {
