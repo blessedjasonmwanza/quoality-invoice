@@ -14,7 +14,6 @@ describe('DisplayInvoices', () => {
           <DisplayInvoices page='Overdue Invoices' status='overdue' />
         </Provider>
       )
-      console.log(root);
     }))
     expect(root.toJSON()).toMatchSnapshot();
   });
@@ -26,7 +25,6 @@ describe('DisplayInvoices', () => {
           <DisplayInvoices page='Paid Invoices' status='paid' />
         </Provider>
       )
-      console.log(root);
     }))
     expect(root.toJSON()).toMatchSnapshot();
   });
@@ -37,7 +35,6 @@ describe('DisplayInvoices', () => {
           <DisplayInvoices page='Unpaid Invoices' status='unpaid' />
         </Provider>
       )
-      console.log(root);
     }))
     expect(root.toJSON()).toMatchSnapshot();
   });
@@ -48,7 +45,6 @@ describe('DisplayInvoices', () => {
           <DisplayInvoices page='All Invoices' status='all' />
         </Provider>
       )
-      console.log(root);
     }))
     expect(root.toJSON()).toMatchSnapshot();
   });
