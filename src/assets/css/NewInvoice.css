@@ -8,6 +8,7 @@
     justify-content: space-between;
 }
 .new-item-form label,
+.invoice-card-header label select,
 .invoice-search-bar label{
     display: inline-flex;
     flex-direction: column;
@@ -19,19 +20,25 @@
 
 .new-item-form label input,
 .invoice-search-bar label input,
-.new-item-form label textarea
+.invoice-card-header label input,
+.new-item-form label textarea,
+.invoice-card-header label select,
 .invoice-search-bar, label textarea{
     font-weight: 500;
     transition: 0.6s;
     border-radius: 5px;
 }
-.new-item-form label input:focus, 
+.new-item-form label input:focus,
+.invoice-card-header label select:focus,
 .invoice-search-bar label input:focus,
+.invoice-card-header label input:focus,
 .new-item-form label textarea:focus {
     box-shadow: 0 0 0 3px rgba(180, 71, 213, 0.2);
 }
 
 .invoice-card input, 
+.invoice-card-header label input,
+.invoice-card-header label select,
 .invoice-search-bar input,
 select{
     line-height: 25px;
@@ -44,6 +51,8 @@ select{
 }
 
 .invoice-card input,
+.invoice-card-header label input,
+.invoice-card-header label select,
 .invoice-search-bar input,
 select, textarea {
     border: 1px solid #ccc;
@@ -104,4 +113,28 @@ select, textarea {
     margin: 0 auto;
     align-self: center;
     margin-top: 20px;
+}
+
+.invoice-card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.invoice-card-header label {
+    display: inline-flex;
+    flex-direction: column;
+    color: #757575;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.invoice-card-header label select{
+    display: inline-flex;
+    background-color: #fff;
+    height: 30px;
+    padding: 5px 5px;
+    align-items: center;
+    align-content: center;
 }
