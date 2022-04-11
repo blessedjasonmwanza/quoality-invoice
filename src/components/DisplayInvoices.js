@@ -24,7 +24,6 @@ export default function DisplayInvoices({page, status}) {
           invoice.company_name.toLowerCase().includes(search.toLowerCase()) ||
           invoice.notes.toLowerCase().includes(search.toLowerCase()) ||
           invoice.status.toLowerCase().includes(search.toLowerCase())
-          
         )
       );
       dispatch(searchResults(filteredInvoices));

@@ -1,14 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../assets/css/Login.css';
 import logo from '../assets/img/logo.png';
 import googleLogo from '../assets/img/google-logo.png';
 import hero from '../assets/img/hero.png';
 
 export default function Login() {
+  const navigate = useNavigate();
   const attemptLogin = (e) => {
     e.preventDefault();
-    window.location.href = '/dashboard';
+    navigate('/new');
   }
   return (
     <div className="login-container vh-center">
