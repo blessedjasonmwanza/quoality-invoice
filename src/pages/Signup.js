@@ -45,7 +45,7 @@ export default function Signup() {
               </span>
               
             </div>
-            <button className="btn login-btn pointer">Create account</button>
+            <button className="btn login-btn pointer" onc>Create account</button>
             <span className='alt-action'> Or </span>
             <button className="continue-google vh-center" type='button'>
               <img src={googleLogo} alt="Use google" title="Continue with google" />
