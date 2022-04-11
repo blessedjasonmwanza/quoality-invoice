@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/quoality-invoice/static/css/main.68261889.css",
-    "main.js": "/quoality-invoice/static/js/main.4289ac11.js",
+    "main.css": "/quoality-invoice/static/css/main.bfebebe5.css",
+    "main.js": "/quoality-invoice/static/js/main.d92cda39.js",
     "static/js/377.986e9966.chunk.js": "/quoality-invoice/static/js/377.986e9966.chunk.js",
     "static/media/hero.png": "/quoality-invoice/static/media/hero.83f5540c0f0afd0f6bc3.png",
     "static/media/google-logo.png": "/quoality-invoice/static/media/google-logo.130c1f482e4aa53c90e8.png",
     "service-worker.js": "/quoality-invoice/service-worker.js",
     "static/media/logo.png": "/quoality-invoice/static/media/logo.eb0bd8deae6fbfe1563e.png",
     "index.html": "/quoality-invoice/index.html",
-    "main.68261889.css.map": "/quoality-invoice/static/css/main.68261889.css.map",
-    "main.4289ac11.js.map": "/quoality-invoice/static/js/main.4289ac11.js.map",
+    "main.bfebebe5.css.map": "/quoality-invoice/static/css/main.bfebebe5.css.map",
+    "main.d92cda39.js.map": "/quoality-invoice/static/js/main.d92cda39.js.map",
     "377.986e9966.chunk.js.map": "/quoality-invoice/static/js/377.986e9966.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68261889.css",
-    "static/js/main.4289ac11.js"
+    "static/css/main.bfebebe5.css",
+    "static/js/main.d92cda39.js"
   ]
 }
