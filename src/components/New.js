@@ -7,9 +7,10 @@ import '../assets/css/Table.css';
 export default function New() {
   const dispatch = useDispatch();
   const [invoice, setInvoice] = useState({
-    company_name: 'Company A',
+    company_name: '',
     notes: '',
     currency: 'USD',
+    due_date: '',
     status: 'unpaid',
     subtotal: 0.00,
     total_tax: 0.00,
@@ -36,8 +37,9 @@ export default function New() {
       setInvoiceItems(savedInvoice.invoice_items)
     }
   }, []);
-
+  const [companyName, setCompanyName] = useState(invoice.company_name);
   const [currency, setCurrency] = useState(invoice.currency);
+  const [due_date, setDueDate] = useState(invoice.due_date);
   const numberFormat = (num) => num.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
   const total_excl_tax = () => invoiceItems.reduce((acc, item) => acc + (item.total - item.unit_tax_amount), 0);
   const subtotal = () => invoiceItems.reduce((acc, item) => acc + item.total, 0);
@@ -46,7 +48,6 @@ export default function New() {
 
 
   const addItem = (e) => {
-    e.preventDefault();
     const { unit_price, quantity, unit_tax_rate, discount } = item;
     const total = ((unit_price * quantity) + ((unit_tax_rate / 100) * (unit_price * quantity))) - discount;
     const tax_total = (unit_tax_rate / 100) * (unit_price * quantity);
@@ -87,7 +88,16 @@ export default function New() {
   };
 
   const saveInvoice = () => {
-    if(invoice.invoice_items.length > 0) {
+    const {invoice_items:items} = invoice;
+    if(companyName.length < 1){
+      alert('Enter Company name ');
+      return;
+    }
+    if(due_date === '' || due_date.length < 6){
+      alert('Enter Invoice due date');
+      return;
+    }
+    if(items.length > 0) {
       const updatedInvoice = {
         ...invoice,
         total_excl_tax: total_excl_tax(),
@@ -111,6 +121,24 @@ export default function New() {
     <>
       <span className='display-title'>Create Invoice</span>
       <div className='card-hovered invoice-card'>
+        <div className='invoice-card-header'>
+          <label>
+            <span className='invoice-card-header-label'>Company Name</span>
+            <input type='text' value={companyName} onInput={(e) => setCompanyName(e.target.value)} placeholder='Recipient company'/>
+          </label>
+          <label>
+            <span className='invoice-card-header-label'>Currency</span>
+            <select value={currency} onChange={(e) => setCurrency(e.target.value)}>
+              <option value='USD'>USD</option>
+              <option value='EUR'>EUR</option>
+              <option value='GBP'>GBP</option>
+            </select>
+          </label>
+          <label>
+            <span className='invoice-card-header-label'>Due Date</span>
+            <input type='date' value={due_date} onChange={(e) => setDueDate(e.target.value)} />
+          </label>
+        </div>
         <form className='new-item-form' onSubmit={(e) => addItem(e)}>
           <label>
             Product name *
@@ -209,7 +237,7 @@ export default function New() {
             </span>
           </span>
         </div>
-        <button className='save-invoice btn' onClick={() => saveInvoice()}>
+        <button className='save-invoice btn' onClick={() => saveInvoice()} type='button'>
           Save Invoice
         </button>
       </div>
