@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../assets/css/Login.css';
 import '../assets/css/Signup.css';
 import logo from '../assets/img/logo.png';
@@ -7,8 +7,10 @@ import googleLogo from '../assets/img/google-logo.png';
 import hero from '../assets/img/hero.png';
 
 export default function Signup() {
+  const navigate = useNavigate();
   const attemptSignup = (e) => {
     e.preventDefault();
+    navigate('/dashboard');
   }
   return (
     <div className="login-container vh-center">
@@ -45,7 +47,7 @@ export default function Signup() {
               </span>
               
             </div>
-            <button className="btn login-btn pointer" onc>Create account</button>
+            <button className="btn login-btn pointer">Create account</button>
             <span className='alt-action'> Or </span>
             <button className="continue-google vh-center" type='button'>
               <img src={googleLogo} alt="Use google" title="Continue with google" />
