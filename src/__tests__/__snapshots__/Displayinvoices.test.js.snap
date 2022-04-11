@@ -1,0 +1,514 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisplayInvoices renders All invoices page without crashing 1`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    All Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`DisplayInvoices renders Overdue invoices page without crashing 1`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Overdue Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`DisplayInvoices renders Paid invoices page without crashing 1`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Paid Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`DisplayInvoices renders Unpaid invoices page without crashing 1`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Unpaid Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`With React Testing Library DisplayInvoices renders Overdue invoices page without crashing 1`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Overdue Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`With React Testing Library DisplayInvoices renders Overdue invoices page without crashing 2`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Overdue Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`With React Testing Library DisplayInvoices renders Overdue invoices page without crashing 3`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Overdue Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`With React Testing Library DisplayInvoices renders Paid invoices page without crashing 1`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Paid Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
+
+exports[`With React Testing Library renders Paid invoices page without crashing 1`] = `
+Array [
+  <span
+    className="display-title"
+  >
+    Paid Invoices
+  </span>,
+  <div
+    className="card-hovered"
+  >
+    <div
+      className="invoice-search-bar d-flex"
+    >
+      <span />
+      <label>
+        <small>
+          Find Invoices
+        </small>
+        <input
+          onInput={[Function]}
+          placeholder="Search"
+          type="search"
+        />
+      </label>
+    </div>
+    <table
+      className="dt-table"
+      id="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Company
+          </th>
+          <th>
+            Items
+          </th>
+          <th>
+            Subtotal
+          </th>
+          <th>
+            Total discount
+          </th>
+          <th>
+            Total Excluding Tax
+          </th>
+          <th>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>,
+]
+`;
